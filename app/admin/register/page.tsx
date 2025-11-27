@@ -6,7 +6,7 @@ import dashIcon from "../../../public/svgs/auth/dash.svg";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { passwordStrength } from "check-password-strength";
-import { validateEmail } from "@/utils/utils";
+import { getNestjsServerAdress, validateEmail } from "@/utils/utils";
 import { Bounce, toast } from "react-toastify";
 
 
@@ -77,7 +77,7 @@ export default function AdminRegisterPage() {
         password: password,
       });
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_RESTAPI_ADDRESS}/auth/register`,
+        `${getNestjsServerAdress()}/auth/register`,
         {
           method: "POST",
           body: JSON.stringify({

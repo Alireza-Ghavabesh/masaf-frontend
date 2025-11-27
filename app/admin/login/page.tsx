@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { Bounce, toast } from "react-toastify";
 import { signIn } from "next-auth/react";
-import { getNextjsServerAdress, validateEmail, validatePhoneNumber } from "@/utils/utils";
+import { getNestjsServerAdress, getNextjsServerAdress, validateEmail, validatePhoneNumber } from "@/utils/utils";
 
 export default function AdminLoginPage() {
   const [loginState, setLoginState] = useState("email");
@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
       );
       // Trigger the sign-in process
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_RESTAPI_ADDRESS}/auth/login`,
+        `${getNestjsServerAdress()}/api/auth/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

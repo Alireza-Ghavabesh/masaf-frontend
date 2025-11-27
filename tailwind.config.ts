@@ -1,7 +1,4 @@
-const withMT = require("@material-tailwind/html/utils/withMT");
-
-
-const config = withMT({
+const config = {
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -25,5 +22,5 @@ const config = withMT({
       },
     },
   },
-});
+};
 export default config;

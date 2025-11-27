@@ -3,16 +3,22 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
-      },{
         protocol: "http",
-        hostname: "localhost"
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/**",
       },
       {
         protocol: "http",
-        hostname: "192.168.8.105:3000"
-      }
+        hostname: "127.0.0.1",
+        port: "8000",
+        pathname: "/**",
+      },
+      // Keep your other domains for production
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
   reactStrictMode: false,

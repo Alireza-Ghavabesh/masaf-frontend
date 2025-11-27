@@ -35,7 +35,6 @@ const page = () => {
               height={500}
               className="rounded-2xl mt-10 lg:w-1/3 h-auto lg:pr-3 mx-auto"
               loadingTime={4000}
-              loading="eager"
             />
           </Suspense>
 
